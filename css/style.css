@@ -41,9 +41,11 @@ body {
 .button {
     display: inline-block;
     padding: 15px 20px;
+    min-height: 52px;
     outline: none;
     border: none;
     border-radius: 4px;
+    box-sizing: border-box;
 
     font-weight: 500;
     font-size: 14px;
@@ -52,15 +54,47 @@ body {
     cursor: pointer;
 }
 
-.button-filled {
+.button-filled:enabled {
     background-color: #DE012C;
     color: #FFFFFF;
 }
 
-.button-outlined {
+.button-filled:enabled:hover {
+    background-color: #C20127;
+}
+
+.button-filled:enabled:focus {
+    border: 2px solid #001524;
+    background-color: #DE012C;
+}
+
+.button-outlined:enabled {
     background-color: transparent;
-    color: #DE012C;
+    color: #1C1919;
     border: 1px solid #DE012C;
+}
+
+.button-outlined:enabled:hover {
+    background-color: #001524;
+    color: #FFFFFF;
+}
+
+.button-outlined:enabled:focus {
+    border: 2px solid #001524;
+    background-color: transparent;
+    color: #1C1919;
+}
+
+.button:disabled, .button:disabled * {
+    color: #BFBCBD;
+}
+
+.button-outlined:disabled {
+    border: 1px solid #CCCACB;
+}
+
+.button-filled:disabled {
+    background-color: #E5E3E4;
 }
 
 .link {
@@ -69,6 +103,18 @@ body {
     line-height: normal;
     color: #001524;
     text-decoration: none;
+}
+
+.link:hover {
+    color: #DE012C;
+}
+
+.link:focus {
+    color: #C20127;
+}
+
+.link:visited {
+    color: #99A1A7;
 }
 
 h1 {
@@ -351,7 +397,7 @@ h1 {
 }
 
 .button span {
-    color: #1C1919;
+    color: #DE012C;
 }
 
 .product-menu-list {
